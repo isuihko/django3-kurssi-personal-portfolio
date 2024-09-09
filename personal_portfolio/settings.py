@@ -25,9 +25,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-bahaxe1q-_s+_d1dg+)#smht_x1n0hrz%2@r=^qm0qei-m=ud$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True
+# Set DEBUG to False for production. See the file local_settings.py.
+DEBUG = False 
+ALLOWED_HOSTS = ['isuihko.pythonanywhere.com']
 
-ALLOWED_HOSTS = []
+####ALLOWED_HOSTS = ['isuihko.pythonanywhere.com','localhost','127.0.0.1']
+
 
 
 # Application definition
@@ -128,3 +132,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR / 'media')
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+try:
+    from .local_settings import *
+except ImportError:
+    print("Looks like no local file. You must be on production")
