@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-bahaxe1q-_s+_d1dg+)#smht_x1n0hrz%2@r=^qm0qei-m=ud$
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = True
 # Set DEBUG to False for production. See the file local_settings.py.
-DEBUG = False 
+DEBUG = False
 ALLOWED_HOSTS = ['isuihko.pythonanywhere.com']
 
 ####ALLOWED_HOSTS = ['isuihko.pythonanywhere.com','localhost','127.0.0.1']
@@ -124,6 +124,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR / 'static')
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR / 'media')
